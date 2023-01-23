@@ -1,3 +1,4 @@
+const helpfunction = require("./commands/help");
 const process = require("process");
 const fs = require("fs");
 
@@ -15,6 +16,7 @@ switch(command){
         break;
     case "help":
         // help function
+        helpfunction.help();
         break;
     default:
         // executes if cmmand not found
