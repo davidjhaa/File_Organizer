@@ -10,19 +10,22 @@ let types = {
 }
 
 function organize(srcPath){
-    //1. to check if srcPath is present
+    // 1. to check if srcPath is present
     if(srcPath == undefined){
-        //The process.cwd() method returns the current working directory of the Node.js process.
-        //console.log(srcPath); //undefined
+        // The process.cwd() method returns the current working directory of the Node.js.
+        console.log(srcPath); //undefined
         srcPath = process.cwd();
     }
 
-    let organized_Files = path.join(srcPath, "Organized Files");
+    let organized_Files = path.join(srcPath, "Organized_Files");
     if(fs.existsSync(organized_Files) == false){ //if organizedfiles nhi bana h to bana do warna rehne do
-        fs.mkdir(organized_Files);
+        fs.mkdirSync(organized_Files);
     }
     else
         console.log("Folder already exist");
 
-    
+}
+
+module.exports = {
+    organize : organize,
 }
